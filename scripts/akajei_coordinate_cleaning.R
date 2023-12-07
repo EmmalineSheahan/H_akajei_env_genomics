@@ -105,6 +105,9 @@ for(i in indices){
   akajei_occs_down <- rbind(akajei_occs_down, tempPoints)
 }
 
+# ordering by the depth column
+akajei_occs_down <- akajei_occs_down[order(akajei_occs_down$depth, decreasing = F),]
+
 # writing final occurrence records to file
 write.csv(akajei_occs_down, file = './data/akajei_occs_down.csv', 
           row.names = F)
